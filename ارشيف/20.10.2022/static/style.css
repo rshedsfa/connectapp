@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+  box-sizing: border-box;
+}
+
+body {  
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+button {
+  background-image: linear-gradient(to right, #015AD1, #1748BC);
+  border-radius: 50px;
+  border: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 25px;
+  transition: all 0.1s ease-in-out;
+  margin: 10px;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 1px 2px #015AD1;
+}
+
+
+.callbutton{
+  background: #25D366;
+}
+
+
+
+.modall-wrapper {
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.modall-wrapper.open {
+  opacity: 1;
+  z-index: 999;
+}
+
+.modall {
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  /* position: relative; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 380px;
+  max-width: 95%;
+  /* border-radius: 60px; */
+}
+
+
+
+.modall-header {
+  background: #015AD1;
+  background-image: linear-gradient(to right, #25D366, #0cd455);
+  color: #fff;
+  padding: 15px 0;
+}
+
+.modall-header h3 {
+  margin: 0;
+}
+
+.modall-body {
+  padding: 15px 20px;
+}
+
+.modall-body h4 {
+  margin: 0;
+}
+
+.modall-body p {
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  margin: 10px 0 0;
+}
+
+.modall-footer {
+  background-color: #eee;
+  padding: 15px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+
+/* Sticky Footer Styling */
+body{
+    min-height: 100vh;
+}
+.sticky-footer{
+    position: sticky;
+    top: 100%;
+}
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+    position: relative;
+    padding-bottom: 58px;
+    min-height: 100vh;
+  }
+  header {
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+  header p {
+    font-size: 22px;
+  }
+
+  footer {
+    text-align: center;
+    background-color: rgb(51, 51, 51);
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* position: fixed;
+    z-index: 1; */
+  }
+
+   

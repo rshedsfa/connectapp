@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+stam title
+{% endblock %}
+
+{% block main %}
+
+<h2>تسجيل معطيات طالب</h2>
+  
+<form class="ui form" action="/add" method="post">
+  <div class="field">
+      <label>Todo Title</label>
+      <ar>
+      <ar>
+      <input type="text" name="title" placeholder="Enter Todo..."><br>
+  </div>
+  <button class="ui blue button" type="submit">Add</button>
+</form>
+
+
+<h2>قائمة الطلاب</h2>
+
+<table class="table" width="100%">
+  <div class="th" style="text-align: center">
+  <tr>
+      <th>#</th>
+      <th>الاسم</th>
+      <th> الصف</th>
+      <th>رقم الطالب</th>
+      <th>رقم الام</th>
+      <th>رقم الاب</th>
+      <th></th>
+    </tr>
+    
+{% for user in users %}
+  <tr>
+    <td><td>
+    <td><td>
+    <td><td>
+    <td><td>
+    <td><td>
+  </tr>
+    
+
+
+<button id="openmodallBtn">{{ user[1] }}</button>
+<div class="modall-wrapper" id="modall">
+  <div class="modall">
+    <div class="modall-header">
+      <h3>{{ user[1] }}</h3>
+    </div>
+    <div class="modall-body">
+      <h4>{{ user[3] }}</h4>
+      <br>
+      <button class="callbutton">الطالب</button>
+      <button class="callbutton">الام</button>
+      <button class="callbutton">الاب</button>
+    </div>
+    <div class="modall-footer">
+      <button id="closemodallBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+</table>
+
+{% endfor %}
+{% endblock %}
+
+
+
