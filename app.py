@@ -1,6 +1,6 @@
 import csv, sqlite3
 from flask import Flask, flash, redirect, render_template, request, session, url_for
-app = Flask(__name__)
+application = Flask(__name__)
 
 
 conn = sqlite3.connect('data.db', check_same_thread=False)
@@ -8,7 +8,7 @@ cu = conn.cursor()
 
 
 
-@app.route("/")
+@application.route("/")
 def index():  
     cu.execute('SELECT * FROM users')
     users = cu.fetchall()
@@ -16,7 +16,7 @@ def index():
 
 
 
-@app.route("/search")
+@application.route("/search")
 def search():
     cu.execute("SELECT * FROM users WHERE name LIKE (?)",[ "%" + request.args.get("searched_word") + "%"]) 
     users = cu.fetchall()
@@ -33,5 +33,5 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
 
