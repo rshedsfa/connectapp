@@ -8,9 +8,6 @@
 
 
 
-
-
-
 <div class="multi_form">
     <form class="myclass row row-cols-lg-auto g-3 align-items-center">
         <div class="col-12">
@@ -33,25 +30,25 @@
     
     
 
-    <div class="col-12">
+    <div class="field col-12">
         <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
         <div class="input-group"> 
         <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="الاسم....">
         <div class="input-group-text">رقم هاتف الطالب</div>
         </div>
-    <div class="col-12">
+    <div class="field col-12">
         <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
         <div class="input-group"> 
         <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="الاسم....">
         <div class="input-group-text">رقم هاتف الام</div>
     </div>
-        <div class="col-12">
+        <div class="field col-12">
         <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
         <div class="input-group"> 
         <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="الاسم....">
         <div class="input-group-text">رقم هاتف الاب</div>
         </div>
-        <div class="col-12">
+        <div class="field col-12">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="inlineFormCheck">
                 <label class="form-check-label" for="inlineFormCheck">
@@ -61,7 +58,7 @@
         </div>
         
         
-        <div class="col-12">
+        <div class="field col-12">
         <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
@@ -133,9 +130,9 @@
 
 
 {% block main %}
-<div id="block_main" class="container">      
+<div id="block_main" class="">      
     
-    <table class="table table-bordered border-primary" id="chart_table" width="50%">
+    <table class="table table-bordered border-primary" id="chart_table">
       <tr class="table-success">
           <th>الاسم</th>
           <th> الصف</th>
@@ -165,8 +162,8 @@
     
 {% endblock %}
 
-</div>
 </table>
+</div>
 
 
 

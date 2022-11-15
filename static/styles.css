@@ -7,6 +7,7 @@
 
 #block_main{
     margin-top: 50px;
+    margin: auto;
 }
 
 #search_button{
@@ -22,9 +23,9 @@
     margin: 3em;
 }
 
-.chart_table{
-    background: red;
-}
+#chart_table{
+
+    }
 
 input[type='text']{
     direction: rtl;
@@ -37,9 +38,9 @@ table{
     text-align: center;
 }
 
+
 body{
     text-align: center;
-    margin: auto;
 }
 
 
@@ -55,6 +56,6 @@ body{
     max-width: auto;
 }
 
-.col-12{
+.field{
     margin-top: 15px;
 }
