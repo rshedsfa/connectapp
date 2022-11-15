@@ -7,7 +7,6 @@
 
 #block_main{
     margin-top: 50px;
-    max-width: 100%;
 }
 
 #search_button{
@@ -52,7 +51,7 @@ body{
 }
 
 .myclass{
-    max-width: 30%;
+    max-width: auto;
 }
 
 .col-12{
