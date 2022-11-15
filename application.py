@@ -35,3 +35,11 @@ def search():
 if __name__ == "__main__":
     application.run(debug=True)
 
+
+
+""" 
+git add .
+git commit -m 'any text'
+git push origin main
+
+ """
