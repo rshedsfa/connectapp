@@ -4,6 +4,20 @@
 {% block body %}
 
 
+<div id="add_student" style="margin-top: 50px;" class="ui container">
+    <h2>تسجيل معطيات طالب</h2>
+      
+    <form class="ui form" action="/add" method="post">
+      <div class="field">
+          <label>name</label>
+          <input type="text" name="title" placeholder="Enter name"><br>
+      </div>
+      <button type="submit" value="add" class="ui blue button" >Add</button>
+    </form>
+
+
+    
+
 {% block title %}
 <h1 class="ui center aligned header" id="title">قائمة الطلاب</h1>
 {% endblock title %}
@@ -28,10 +42,21 @@
 
 
     
+
+
+
+
+
+
+
+
+
+
+
 {% block main %}
-<div style="margin-top: 50px;" class="container">      
+<div id="block_main" class="container">      
     
-    <table class="table user_table table-bordered border-primary" width="100%">
+    <table class="table table-bordered border-primary" id="chart_table" width="50%">
       <tr class="table-success">
           <th>الاسم</th>
           <th>رقم الطالب</th>
@@ -65,12 +90,6 @@
 </table>
 
 
-<style>
-    table{
-        text-align: center;
-    }
-
-</style>
 
 
 
@@ -112,16 +131,7 @@
 
  
 
-<div style="margin-top: 50px;" class="ui container">
-    <h2>تسجيل معطيات طالب</h2>
-      
-    <form class="ui form" action="/add" method="post">
-      <div class="field">
-          <label>name</label>
-          <input type="text" name="title" placeholder="Enter name"><br>
-      </div>
-      <button class="ui blue button" type="submit">Add</button>
-    </form>
+
 
     <br><br><br><br><br><br>
 
