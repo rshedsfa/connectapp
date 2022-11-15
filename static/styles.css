@@ -7,6 +7,7 @@
 
 #block_main{
     margin-top: 50px;
+    max-width: 100%;
 }
 
 #search_button{
@@ -26,9 +27,12 @@
     background: red;
 }
 
-.placeholder_class{
+input[type='text']{
     direction: rtl;
-}
+    text-align:right;
+    }
+    
+
 
 table{
     text-align: center;
@@ -39,3 +43,18 @@ body{
 }
 
 
+.multi_form{
+    margin-top: 100px;
+    text-align: center;
+}
+.input-group{
+    direction: ltr;
+}
+
+.myclass{
+    max-width: 30%;
+}
+
+.col-12{
+    margin-top: 15px;
+}
