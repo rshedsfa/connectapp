@@ -36,10 +36,6 @@ input[type='text']{
     }
     
 
-table{
-    text-align: center;
-}
-
 
 .multi_form{
     text-align: center
@@ -73,6 +69,26 @@ footer {
   }
 
 
+
+  
+table{
+    text-align: center;
+}
+
+tr, td, thead, tbody{
+    padding: 0px;
+    margin: 0px;
+    gap: 0px;
+} 
+
+.main_chart_td{
+    padding: 0px;
+    font-size: small;
+  }
+  .botton_w{
+    padding: 8px;
+    background-color: #21BA45;
+  }
 
 
 

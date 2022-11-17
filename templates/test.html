@@ -2,49 +2,33 @@
 
 <table class="table">
   <thead>
-    <tr>
-      <th>الاسم</th>
-      <th>الصف</th>
-      <th>رقم الطالب</th>
-      <th>رقم الام</th>
-      <th>رقم الاب</th>
-      <th>ملاحظة</th>
+    <tr class="">
+      <th class="main_chart_td">الاسم</th>
+      <th class="main_chart_td">الصف</th>
+      <th class="main_chart_td">رقم الطالب</th>
+      <th class="main_chart_td">رقم الام</th>
+      <th class="main_chart_td">رقم الاب</th>
     </tr>
   </thead>
   <tbody>
     {% for user in users %}
     <div>
-      <tr>
-        <td class="">{{ user[1] }}</td>
-        <td class="">{{ user[3] }}</td>
-        <td>.button{
-            margin: 100px;
-        }
-          <!-- <a class="ui blue button" href="tel:972{{ user[5] }}">رقم الطالب</a> -->
-          <a
-            class="ui green button"
-            href="https://api.whatsapp.com/send?phone=972{{ user[5] }}"
-            >رقم الطالب</a
-          >
-        </td>
-        <td>
-          <a
-            class="ui green button"
-            href="https://api.whatsapp.com/send?phone=972{{ user[6] }}"
-            >رقم الام</a
-          >
-        </td>
-        <td>
-          <a
-            class="ui green button"
-            href="https://api.whatsapp.com/send?phone=972{{ user[7] }}"
-            >رقم الاب</a
-          >
-        </td>
-        <td>{{ user[10] }}</td>
-      </tr>
+        <tr>
+            <td class="">{{ user[1] }}</td> 
+            <td class="">{{ user[3] }}</td> 
+            <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></td>
+            <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></td>
+            <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></td>
+        </tr>
+
+            <tr>
+                {% if user[10]  %}
+                <td class="main_chart_td" id="note">{{ user[10] }}</td>
+                {% endif %}
+            </tr>
+
+
     </div>
-    <div></div>
     {% endfor %}
   </tbody>
 </table>

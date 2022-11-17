@@ -40,6 +40,15 @@ def test():
     users = cu.fetchall()
     return render_template("test.html", users=users)
 
+@application.route("/sql")
+def sql():
+    cu.execute("UPDATE users SET note ='ملاحظة عن الطالب عمر' WHERE name ='omar'") #############
+    cu.execute('SELECT * FROM users')
+    users = cu.fetchall()
+    return render_template("index.html", users=users)
+
+
+
 
 if __name__ == "__main__":
     application.run(debug=True)
