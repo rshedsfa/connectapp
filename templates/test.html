@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block body %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>الاسم</th>
+      <th>الصف</th>
+      <th>رقم الطالب</th>
+      <th>رقم الام</th>
+      <th>رقم الاب</th>
+      <th>ملاحظة</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <div>
+      <tr>
+        <td class="">{{ user[1] }}</td>
+        <td class="">{{ user[3] }}</td>
+        <td>.button{
+            margin: 100px;
+        }
+          <!-- <a class="ui blue button" href="tel:972{{ user[5] }}">رقم الطالب</a> -->
+          <a
+            class="ui green button"
+            href="https://api.whatsapp.com/send?phone=972{{ user[5] }}"
+            >رقم الطالب</a
+          >
+        </td>
+        <td>
+          <a
+            class="ui green button"
+            href="https://api.whatsapp.com/send?phone=972{{ user[6] }}"
+            >رقم الام</a
+          >
+        </td>
+        <td>
+          <a
+            class="ui green button"
+            href="https://api.whatsapp.com/send?phone=972{{ user[7] }}"
+            >رقم الاب</a
+          >
+        </td>
+        <td>{{ user[10] }}</td>
+      </tr>
+    </div>
+    <div></div>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

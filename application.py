@@ -34,6 +34,12 @@ def add():
     return render_template("add.html")
 
 
+@application.route("/test")
+def test():
+    cu.execute('SELECT * FROM users')
+    users = cu.fetchall()
+    return render_template("test.html", users=users)
+
 
 if __name__ == "__main__":
     application.run(debug=True)
