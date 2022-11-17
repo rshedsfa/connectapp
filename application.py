@@ -29,6 +29,9 @@ def search():
         return render_template("index.html", users=users, not_found=not_found)
 
 
+@application.route("/add")
+def add():
+    return render_template("add.html")
 
 
 

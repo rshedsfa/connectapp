@@ -14,7 +14,51 @@
         <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
     </head>
     
+
+
+
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/">الرئيسية</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/add">اضافة طالب</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+
+
+
     <body class="container">
         {% block body %}{% endblock %}
     </body>
+
+
+
+
+
+    <footer class="bg-primary text-white">
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, rshed sfa</p>
+    </footer>
+
+
+
+
+
+
 </html>

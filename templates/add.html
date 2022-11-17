@@ -1,0 +1,348 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+<div id="add_form">
+      <h1 calss="h1">اضافة مستخدم</h1>
+      <hr>
+  <form action="/">
+    <div id="form_labels">
+
+      <label for="name">الاسم الكامل</label>
+      <input type="text" id="name" name="name" placeholder="Your name..">
+  
+      <label for="class_n">الصف</label>
+      <select id="class_n" name="class_n">
+        <option value="10-1">10-1</option>
+        <option value="10-2">10-2</option>
+        <option value="10-3">10-3</option>
+      </select>
+
+      <label for="gender">الجنس</label>
+      <select id="gender" name="gender">
+        <option value="10-1">ذكر</option>
+        <option value="10-2">انثى</option>
+      </select>
+
+        <br><br>
+        
+      <label for="lname">رقم هاتف الطالب</label>
+      <input type="text" id="student_n" name="mother_n" placeholder="Your last name..">
+      <label for="lname">رقم هاتف الام</label>
+      <input type="text" id="mother_n" name="mother_n" placeholder="Your last name..">
+      <label for="lname">رقم هاتف الاب</label>
+      <input type="text" id="father_n" name="father_n" placeholder="Your last name..">
+      <label for="lname">ملاحظة</label>
+      <input type="text" id="note" name="note" placeholder="Your last name..">
+    
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+</form>
+  
+  
+
+    <style>
+
+        .h1{
+            font-size: 3rem;
+        }
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+
+        
+        #add_form{
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            display: grid;
+            place-items: center;
+        }
+        
+        #form_labels{
+            max-width:480px;
+            padding: 10px;
+        }
+
+        label{
+            font-size:15px;
+            margin: 5px
+        }
+
+        </style>
+
+        
+  
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+  
+
+
+<form>
+    <lable>الاسم</lable>
+    <input></input>
+
+    <lable>الصف</lable>
+    <input type="list"></input>
+
+    <lable></lable>
+    <input></input>
+
+</form>
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form class="add_form">
+    
+    <div class="col-md-6 span">
+        <label  type="text" class="">الاسم</label>
+        <select class="form-select" id="">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    
+    <div class="row mb-3">
+      <label  type="text" class="col-sm-2 col-form-label">الاسم</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputEmail3">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label type="text" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3">
+      </div>
+    </div>
+    <fieldset class="row mb-3">
+      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            First radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            Second radio
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+          <label class="form-check-label" for="gridRadios3">
+            Third disabled radio
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="row mb-3">
+      <div class="col-sm-10 offset-sm-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1">
+          <label class="form-check-label" for="gridCheck1">
+            Example checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+
+<div class="multi_form">
+    <form class="row row-cols-md-auto">
+        
+        <div class="col-md-6">
+            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" id="inlineFormSelectPref">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        
+        
+        <div class="col-md-6">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+            <div class="input-group"> 
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="الاسم....">
+                <div class="input-group-text ">الاسم الكامل</div>
+            </div>
+        </div>
+
+
+        <div class="field col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+            <div class="input-group"> 
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="الاسم....">
+            <div class="input-group-text">رقم هاتف الطالب</div>
+            </div>
+        <div class="field col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+            <div class="input-group"> 
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="الاسم....">
+            <div class="input-group-text">رقم هاتف الام</div>
+        </div>
+            <div class="field col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+            <div class="input-group"> 
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="الاسم....">
+            <div class="input-group-text">رقم هاتف الاب</div>
+            </div>
+            <div class="field col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                    <label class="form-check-label" for="inlineFormCheck">
+                        Remember me
+                    </label>
+                </div>
+            </div>
+            
+            
+            <div class="field col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="add_student" style="margin-top: 50px;" class="ui container">
+    <h2 class="text-sm-left text-md-center">تسجيل معطيات طالب</h2>
+      
+    <form class="ui form" action="/add" method="post">
+      <div class="field">
+          <label>name</label>
+          <input type="text" name="title" placeholder="Enter name"><br>
+      </div>
+      <button type="submit" value="add" class="ui blue button" >Add</button>
+    </form>
+
+
+
+{% endblock %}
