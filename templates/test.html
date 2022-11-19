@@ -1,5 +1,66 @@
 {% extends "layout.html" %} {% block body %}
 
+
+
+
+
+<div class="div1">
+  <div class="div1_elemnts" id="1_1">الاسم</div>
+  <div class="div1_elemnts" id="1_2">الصف</div>
+  <div class="div1_elemnts" id="1_3">رقم الطالب</div>
+  <div class="div1_elemnts" id="1_4">رقم الام</div>
+  <div class="div1_elemnts" id="1_5">رقم الاب</div>
+  <div class="div1_elemnts" id="1_6">ملاحظة</div>
+</div>        
+
+
+
+
+<style>
+
+  .div1{
+  border: 1px solid;
+  margin-top: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  
+}
+
+.div1_elemnts{
+  height: 50px;
+  background: #FDA061;
+  display: flex ;
+  justify-content : center;
+  align-items: center;
+}
+      .div1_elemnts:nth-child(1) {
+          background: #FC6057;
+      }
+      .div1_elemnts:nth-child(2) {
+          background: #01A787;
+      }
+      .div1_elemnts:nth-child(3) {
+          background: #FDA061;
+      }
+      .div1_elemnts:nth-child(4) {
+          background: #FDA061;
+      }
+      .div1_elemnts:nth-child(5) {
+          background: #FDA061;
+      }
+      .div1_elemnts:nth-child(6) {
+          background: #FDA061;
+      }
+
+  
+</style>
+
+
+
+
+{% block main %}
 <table class="table">
   <thead>
     <tr class="">
@@ -13,52 +74,27 @@
   <tbody>
     {% for user in users %}
     <div>
-        <tr>
-            <td class="">{{ user[1] }}</td> 
-            <td class="">{{ user[3] }}</td> 
-            <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></td>
-            <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></td>
-            <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></td>
-        </tr>
+      <tr>
+        <td class="">{{ user[1] }}</td> 
+        <td class="">{{ user[3] }}</td> 
+        <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></td>
+        <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></td>
+        <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></td>
+      </tr>
+      
+      <tr>
+        {% if user[10]  %}
+        <td class="main_chart_td" id="note">{{ user[10] }}</td>
+        {% endif %}
+      </tr>
+      
 
-            <tr>
-                {% if user[10]  %}
-                <td class="main_chart_td" id="note">{{ user[10] }}</td>
-                {% endif %}
-            </tr>
-
-<h1>just for testing</h1>
-<h1>yes it's work</h1>
-<h1>do new thing every day</h1>
     </div>
     {% endfor %}
   </tbody>
 </table>
+{% endblock %}
 
 {% endblock %}
 
 
-
-<div class="table">
-  <div>Row 1</div>
-  <div>1.00</div>
-  <div>Description</div>
-  
-    <div>Row 2</div>
-  <div>2.00</div>
-  <div>A description</div>
-  
-    <div>Row 3</div>
-  <div>3.00</div>
-  <div>Very long description that will wrap over to the next line without affecting the width of other columns in the table.</div>
-  
-      <div>Row 4 too long for the first column</div>
-  <div>4.00</div>
-  <div>Longer description</div>
-  
-  <div>Row 5</div>
-  <div>Too long for the second column</div>
-  <div>Another description</div>
- </div>
-
- 
