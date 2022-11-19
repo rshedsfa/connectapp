@@ -14,7 +14,7 @@
   {% for user in users %}
   <div class="div1">
     <div class="div_elemnts botton_text name_text">{{ user[1] }}</div>
-    <div class="div_elemnts botton_text">{{ user[3] }}</div>
+    <div class="div_elemnts botton_text class_text_size">{{ user[3] }}</div>
     <div <a button type="button" class="btn btn-success botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></div>
     <div <a button type="button" class="btn btn-success botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></div>
     <div <a button type="button" class="btn btn-success botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></div>
@@ -45,7 +45,7 @@
 
 .div1{
   display: grid;
-  grid-template-columns: 30% 15% 20% 20% 20% ;
+  grid-template-columns: 35% 10% 20% 20% 20% ;
   gap: 5px;
   margin:5px;
 }
@@ -67,8 +67,8 @@
   align-items: center;
 }
 .botton_whatsapp{
-  font-size: small;
-  padding: 8px;
+  font-size: 10px;
+  padding: 6px;
   background-color: #21BA45;
 }
 
@@ -85,6 +85,9 @@
   align-items: right;
 }
       
+.class_text_size{
+  font-size: 10px;
+}
     </style>
     
 
