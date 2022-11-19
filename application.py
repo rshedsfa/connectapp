@@ -47,6 +47,13 @@ def sql():
     users = cu.fetchall()
     return render_template("index.html", users=users)
 
+@application.route("/sqlomar")
+def sqlomar():
+    cu.execute("UPDATE users SET name ='عمر محمد ابومخ' WHERE name ='omar'") #############
+    cu.execute('SELECT * FROM users')
+    users = cu.fetchall()
+    return render_template("index.html", users=users)
+
 
 
 
