@@ -1,57 +1,64 @@
 {% extends "layout.html" %} {% block body %}
 
-
-<div class="main_chart">
+<div class="chart_body">
   <div class="div1">
     <div class="div_elemnts titels" id="1_1">الاسم</div>
     <div class="div_elemnts titels" id="1_2">الصف</div>
     <div class="div_elemnts titels" id="1_3">رقم</div>
     <div class="div_elemnts titels" id="1_4">رقم</div>
     <div class="div_elemnts titels" id="1_5">رقم</div>
-  </div>  
+  </div>
+</div>  
 
-          
   {% for user in users %}
   <div class="div1">
-    <div class="div_elemnts" id="1_1">{{ user[1] }}</div>
-    <div class="div_elemnts" id="1_2">{{ user[3] }}</div>
-    <div class="div_elemnts btn btn-success" id="1_3">{{ user[5] }}</div>
-    <div class="div_elemnts btn btn-success" id="1_4">{{ user[6] }}</div>
-    <div class="div_elemnts btn btn-success" id="1_5">{{ user[7] }}</div>
+    <div class="div_elemnts botton_text" id="1_1">{{ user[1] }}</div>
+    <div class="div_elemnts botton_text" id="1_2">{{ user[3] }}</div>
+    <div <a button type="button" class="btn btn-success botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></div>
+    <div <a button type="button" class="btn btn-success botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></div>
+    <div <a button type="button" class="btn btn-success botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></div>
   </div>        
   <div>
     {% if user[10]  %}
-      <div class="" id="note">{{ user[10] }}</div>
-    {% endif %}</div>  
+      <div class="note_elemnt" >{{ user[10] }}</div>
+    {% endif %}
+  </div>  
   {% endfor %}
-</div>  
+
+
 
 
 
 
 <style>
 
+  .titels{
+    font-size: 15px;
+    font-weight: bold;
+  }
+
   .main_chart{
+    max-width: 500px;
     display: grid;
     place-items: center;
   }
+
   .div1{
   width: 90%;
   display: grid;
-  grid-template-columns: 30% 10% 20% 20% 20% ;
+  grid-template-columns: 30% 15% 20% 20% 20% ;
   gap: 5px;
   margin:5px;
 }
 
-
-
-
 .div_elemnts{
-  font-size: 0.5em;
   height: auto;
   display: flex ;
   justify-content : center;
   align-items: center;
+}
+.botton_text{
+  font-size: 15px;
 }
       .div_elemnts:nth-child(1) {
       }
@@ -71,9 +78,12 @@
         justify-content : right;
         align-items: center;
       }
-      .titels{
-        font-size: 3vw;
-      }
+.botton_whatsapp{
+  font-size: small;
+  padding: 8px;
+  background-color: #21BA45;
+}
+
 
 </style>
 
@@ -99,9 +109,9 @@
       <tr>
         <td class="">{{ user[1] }}</td> 
         <td class="">{{ user[3] }}</td> 
-        <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></td>
-        <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></td>
-        <td><a button type="button" class="btn btn-success botton_w main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></td>
+        <td><a button type="button" class="btn btn-success botton_whatsapp main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></td>
+        <td><a button type="button" class="btn btn-success botton_whatsapp main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></td>
+        <td><a button type="button" class="btn btn-success botton_whatsapp main_chart_td" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></td>
       </tr>
       
       <tr>
