@@ -5,6 +5,9 @@ body{
 
 
 
+html, body { overflow-x: visible; }
+
+
 
 #title{
     margin-top: 1em;
@@ -61,6 +64,28 @@ input[type='text']{
 
 
 
+table{
+    text-align: center;
+}
+td, th 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 footer {
     text-align: center;
     padding: 20px;
@@ -71,30 +96,19 @@ footer {
 
 
   
-table{
-    text-align: center;
-}
 
-tr, td, thead, tbody{
-    padding: 0px;
-    margin: 0px;
-    gap: 0px;
-} 
 
 .main_chart_td{
     padding: 0px;
     font-size: small;
   }
+
   .botton_w{
     font-size: small;
+    color:white;
     padding: 8px;
     background-color: #21BA45;
   }
-
-
-
-
-
 
 
 

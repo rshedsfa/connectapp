@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
+<div class="container">
 
 {% block title %}
 <h1 class="ui center aligned header" id="title">قائمة الطلاب</h1>
@@ -42,14 +42,13 @@
 {% block main %}
 <div id="main_chart" class="">      
     
-    <table class="table table-bordered border-primary" id="chart_table">
+    <table class="table" id="chart_table">
       <tr class="table-success">
           <th>الاسم</th>
           <th> الصف</th>
           <th>رقم الطالب</th>
           <th>رقم الام</th>
           <th>رقم الاب</th>
-          <th>ملاحظة</th>
         </tr>
 
     {% for user in users %}
@@ -57,14 +56,13 @@
         <tr>
             <td class="">{{ user[1] }}</td> 
             <td class="">{{ user[3] }}</td> 
-            <td><a class="ui green button" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">رقم الطالب</a></td>
-            <td><a class="ui green button" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">رقم الام</a></td>
-            <td><a class="ui green button" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">رقم الاب</a></td>
-            <td>{{ user[10] }}</td>
+            <td><a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></td>
+            <td><a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></td>
+            <td><a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></td>
         </tr>
     </div>
     {% endfor %}
-    
+
 
 {% endblock %}
 </table>
@@ -107,13 +105,13 @@
 </table>
 
 
-<br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
 
 
  
 
 
 
-    <br><br><br><br><br><br>
-
+</div>
 {% endblock %}
