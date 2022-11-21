@@ -66,36 +66,20 @@ input[type='text']{
 
 table{
     text-align: center;
+    max-width: 500px;
 }
+
 td, th 
 {
     text-align: center; 
     vertical-align: middle;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer {
-    text-align: center;
-    padding: 20px;
-    bottom: 0;
-    width: 100%;
-  }
-
-
-
-  
+#main_chart{
+    display: flex ;
+    justify-content : center;
+    align-items: center;
+}
 
 
 .main_chart_td{
@@ -109,6 +93,35 @@ footer {
     padding: 8px;
     background-color: #21BA45;
   }
+
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+
+
+
+  @media screen and (min-width: 600px) {
+    table {
+      
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

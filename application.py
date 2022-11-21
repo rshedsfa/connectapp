@@ -1,3 +1,4 @@
+from profile_api import *
 import csv, sqlite3
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 application = Flask(__name__)
