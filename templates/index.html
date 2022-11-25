@@ -34,11 +34,6 @@
 
 
 
-
-
-
-
-
 {% block main %}
 <div id="main_chart" class="">      
     
@@ -69,40 +64,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table class="table" width="100%">
-<div class="th" style="text-align: center">
-{% for user in users %}
-<div class="ui segment">
-    <p class="ui big header">{{user[1] }} <br> <span style="font-size: 0.8em">({{ user[3] }})<span></p>
-    <a class="ui blue button" href="/update/{{ user[5]  }}">رقم الطالب</a>
-    <a class="ui green button" href="/update/{{ user[6]  }}">رقم الام</a>
-    <a class="ui red button" href="/delete/{{ user[7]  }}">رقم الاب</a>
-</div>
-{% endfor %}
-
-</table>
 
 
         <br><br><br><br><br><br>
