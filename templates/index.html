@@ -49,11 +49,11 @@
     {% for user in users %}
     <div>
         <tr>
-            <td class="">{{ user[1] }}</td> 
-            <td class="">{{ user[3] }}</td> 
-            <td><a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a></td>
-            <td><a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a></td>
-            <td><a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a></td>
+            <td class="">{% if user[1]  %}{{ user[1] }}</td> {% endif %}
+            <td class="">{% if user[3]  %}{{ user[3] }} {% endif %}</td>
+            <td>{% if user[5]  %}<a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a>{% endif %}</td>
+            <td>{% if user[6]  %}<a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a>{% endif %}</td>
+             <td>{% if user[7]  %}<a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a>{% endif %}</td>
         </tr>
     </div>
     {% endfor %}

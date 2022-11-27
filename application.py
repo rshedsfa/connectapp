@@ -29,10 +29,28 @@ def search():
         return render_template("index.html", users=users, not_found=not_found)
 
 
-@application.route("/add")
-def add():
-    return render_template("add.html")
 
+@application.route('/add', methods=['GET', 'POST'])
+def add():
+    if request.method == "POST":
+        if not request.form.get('username'):
+            return ("fill all the fields")
+        else:
+            username=request.form.get('username')
+            student_n=request.form.get('student_n')
+            #cu.execute("INSERT INTO users(name, student_n) VALUES (?,?)", (username, student_n))
+            cu.execute("INSERT INTO users(name, student_n) VALUES (?,?)", (request.form.get('username'), request.form.get('student_n')))
+            conn.commit()
+            
+            cu.execute("SELECT * FROM users WHERE name LIKE (?)",(username,)) 
+            users = cu.fetchall()
+            return render_template("index.html", users=users)
+            #return (index())
+    else:
+        return render_template("add.html")
+    
+    
+    
 
 @application.route("/test")
 def test():
@@ -59,7 +77,6 @@ def sqlomar():
 
 if __name__ == "__main__":
     application.run(debug=True)
-
 
 
 """ 
