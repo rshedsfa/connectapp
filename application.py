@@ -13,12 +13,11 @@ class_s = ['10-1','10-2','10-3','10-4','10-5','',
 @application.route('/', methods=['GET', 'POST'])
 def index():  
 
-    
     if request.method == "POST":
         searched_class=request.form.get('searched_class')
         cu.execute("SELECT * FROM users WHERE class LIKE (?)",[searched_class]) 
         users = cu.fetchall()
-        return render_template("index.html", users=users,class_s=class_s)
+        return render_template("index.html", users=users,class_s=class_s, searched_class=searched_class)
     else:
         cu.execute('SELECT * FROM users')
         users = cu.fetchall()
