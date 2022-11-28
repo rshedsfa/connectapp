@@ -26,8 +26,62 @@
     {% endif %}
 {% endblock search %}
 
+<!--  
 
-    
+<div class="container" style="max-width:500px; ">
+    <form>
+            {% for class_n in class_s %}
+            {% if class_n %}
+            <button class="btn btn-danger" value="{{ class_n }}" action="/" method="POST">{{ class_n }}</button>
+            {% endif %}
+                {% if class_n == "10-5" or class_n == "11-5" %}
+                 <br><br>   
+                {% endif %}
+            {% endfor %}
+    </form>
+    <script src="{{url_for('static', filename='ajax.js')}}"></script>
+</div>
+-->
+
+
+<div class="container" style="max-width:200px; ">
+    <form action="/" method="post">
+        <select id="searched_class" name="searched_class" class="form-select" aria-label="Default select example">
+            {% for class in class_s %}
+                {% if class  %}
+                    <option value="{{ class }}">{{ class }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+<!--        radio button 
+<div class="container" style="max-width:500px; ">
+        <form action="/" method="post">
+            {% for class_n in class_s %}
+                {% if class_n  %}
+                {% if class_n == "10-5" or class_n == "11-5" %}
+                <br><br>   
+               {% endif %}
+                    <input class="form-check-input" id="searched_class" name="searched_class" type="radio" name="color" value="{{ class_n }}"> {{ class_n }}
+                {% endif %}
+            {% endfor %}
+            <br>
+            <input type="submit" value="submit">  
+          </form>          
+</div>
+
+<style>
+
+</style>
+-->
+
+
+
+
 
 
 

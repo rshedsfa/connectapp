@@ -88,13 +88,13 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="country">الصف</label>
+          <label for="class_n">الصف</label>
         </div>
         <div class="col-75">
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+          <select id="class_n" name="class_n">
+          {% for class in class_s %}
+            <option value="{{ class }}">{{ class }}</option>
+          {% endfor %}
           </select>
         </div>
       </div>
@@ -108,26 +108,26 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">رقم الام</label>
+          <label for="mother_n">رقم الام</label>
         </div>
         <div class="col-75">
-          <input type="text" id="lname" name="lastname" placeholder="">
+          <input type="text" id="mother_n" name="mother_n" placeholder="">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">رقم الاب</label>
+          <label for="father_n">رقم الاب</label>
         </div>
         <div class="col-75">
-          <input type="text" id="lname" name="lastname" placeholder="">
+          <input type="text" id="father_n" name="father_n" placeholder="">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">ملاحظة</label>
+          <label for="note">ملاحظة</label>
         </div>
         <div class="col-75">
-          <input type="text" id="lname" name="lastname" placeholder="">
+          <input type="text" id="note" name="note" placeholder="">
         </div>
       </div>
       <br>
