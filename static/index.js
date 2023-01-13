@@ -1,4 +1,4 @@
-
+// from regular call to whatsapp call
 function convert_Btn(){
     const botton_w = document.getElementsByClassName("botton_w");
     const botton_c = document.getElementsByClassName("botton_c");
@@ -23,7 +23,7 @@ function convert_Btn(){
 }
 
 
-
+// edit mode convert
 /* window.onload = function() {
     document.getElementById("editeBtn").checked = true;    
     editeMode()

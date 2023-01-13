@@ -64,7 +64,7 @@
     
     <table class="table" id="chart_table">
       <tr class="table-success">
-          <th>#</th>
+          <th  class="hide_in_phone">#</th>
           <th>الاسم</th>
           <th> الصف</th>
           <th>رقم الطالب</th>
@@ -76,9 +76,9 @@
     {% for user in users %}
     <div>
         <tr>
-            <td style="width:20px;height:20px">{{loop.index}}</td>
-            <td class=""><Span class="nameAndClass">{% if user[1]  %}{{ user[1] }}{% endif %}</Span></td>
-            <td class=""><span class="nameAndClass">{% if user[2]  %}{{ user[2] }} {% endif %}</span></td>
+            <td class="hide_in_phone" style="width:20px;height:20px">{{loop.index}}</td>
+            <td class="tdName"><Span class="nameAndClass">{% if user[1]  %}{{ user[1] }}{% endif %}</Span></td>
+            <td class="tdClass"><span class="nameAndClass">{% if user[2]  %}{{ user[2] }} {% endif %}</span></td>
             <td>
                 {% if user[3]  %}<a button type="button" class="btn botton_w botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[3] }}">الطالب</a>{% endif %}
                 {% if user[3]  %}<a button type="button" class="btn botton_c botton_text" href="tel:972{{ user[3] }}">الطالب</a>{% endif %}
@@ -92,7 +92,7 @@
                 {% if user[5]  %}<a button type="button" class="btn botton_c botton_text" href="tel:{{ user[5] }}">الاب</a>{% endif %}
             </td>
             <!-- button -->
-            <td style="width:20px;height:20px"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}"><img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png" alt="edit" style="width:20px;height:20px"></button></td>
+            <td><button type="button" class="btn editBtn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}"><img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png" alt="edit" class="editBtn"></button></td>
             <!-- <td><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}">&#xF3E5</button></td> -->
             
         </tr>
@@ -168,13 +168,12 @@
             </div>
         </div>
         </div>
-    
-    {% endfor %}
+        {% endfor %}
 
 
 {% endblock %}
 </table>
 </div>
-
 </div>
+<br><br><br><br>
 {% endblock %}

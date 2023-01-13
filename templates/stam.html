@@ -1,9 +1,0 @@
-
-
-    <form action="{{ url_for( "UPDATE", id=user[0] ) }}" method="post">
-        {% for user in users %}
-        <input type="text" name="username{{ user[0] }}" value="{{ user[1] }}">
-            <button "type="submet" class="btn btn-success>UPDATE</button>
-            <button onclick="location.href='/delete/{{user[0]}}'" type="button" class="btn btn-danger">delete</button> 
-        {% endfor %}
-    </form>
