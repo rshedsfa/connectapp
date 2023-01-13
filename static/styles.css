@@ -64,7 +64,10 @@ color: red;
 }
 
 
-
+.bootstrap-select.btn-group .dropdown-menu li a:hover {
+  color: rgb(0, 255, 21) !important;
+  background: #bf5279 !important;
+}
 
 
 body{
