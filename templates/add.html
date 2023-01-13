@@ -1,89 +1,25 @@
 {% extends "layout.html" %}
-
+header
 {% block body %}
-<br><br><br><br>
+
+<head>
+  <link href="{{ url_for('static', filename='forms.css') }}" rel="stylesheet"/>
+</head>
+<br><br>
 
 
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  
-  input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
-  
-  label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-  }
-  
-  input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-  
-  .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-  }
-  
-  .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
-  </style>
-  </head>
-  <body>
-  
   <h1>اضافة مستخدم جديد</h1>
   <p>يرجى الحرص على تعبئة جميع المعطيات والتأكد منها قبل الارسال</p>
   
-  <div class="container">
+  <div class="container addForm">
     <form action="/add" method="post">
       <div class="row">
         <div class="col-25">
-          <label for="username">الاسم</label>
+          <label for="username" autocomplete="off">الاسم</label>
         </div>
         <div class="col-75">
-          <input type="text" id="username" name="username" placeholder="">
+          <input type="text" id="username" name="username" value="محمد عمر ابومخ" required>
         </div>
       </div>
       <div class="row">
@@ -91,10 +27,11 @@
           <label for="class_n">الصف</label>
         </div>
         <div class="col-75">
-          <select id="class_n" name="class_n">
-          {% for class in class_s %}
+          <select id="class_n" name="class_n" >
+            <option required value="none" selected disabled hidden>اختر الصف</option>
+            {% for class in class_s %}
             <option value="{{ class }}">{{ class }}</option>
-          {% endfor %}
+            {% endfor %}
           </select>
         </div>
       </div>
@@ -103,7 +40,7 @@
           <label for="student_n">رقم الطالب</label>
         </div>
         <div class="col-75">
-          <input type="text" id="student_n" name="student_n" placeholder="">
+          <input type="text" id="student_n" name="student_n" value="0504834414">
         </div>
       </div>
       <div class="row">
@@ -111,7 +48,7 @@
           <label for="mother_n">رقم الام</label>
         </div>
         <div class="col-75">
-          <input type="text" id="mother_n" name="mother_n" placeholder="">
+          <input type="text" id="mother_n" name="mother_n" value="0504834414">
         </div>
       </div>
       <div class="row">
@@ -119,27 +56,14 @@
           <label for="father_n">رقم الاب</label>
         </div>
         <div class="col-75">
-          <input type="text" id="father_n" name="father_n" placeholder="">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="note">ملاحظة</label>
-        </div>
-        <div class="col-75">
-          <input type="text" id="note" name="note" placeholder="">
+          <input type="text" id="father_n" name="father_n" value="0504834414">
         </div>
       </div>
       <br>
       <div class="row">
-        <input type="submit" value="Submit">
+        <input type="submit" value="SAVE">
       </div>
     </form>
   </div>
 
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-{% endblock %}
+  {% endblock %}

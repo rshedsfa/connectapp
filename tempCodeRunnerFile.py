@@ -1,0 +1,5 @@
+print(username)
+        print(class_n)
+        print(student_n)
+        print(mother_n)
+        print(father_n)

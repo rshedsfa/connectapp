@@ -1,11 +1,12 @@
-
 {% extends "layout.html" %}
 
 {% block body %}
 <div class="container">
 
+
 {% block title %}
-<h1 class="ui center aligned header" id="title">قائمة الطلاب</h1>
+<h1 class="ui center aligned header" id="title" href="google.com">قائمة الطلاب</h1>
+
 {% endblock title %}
 
 
@@ -26,22 +27,6 @@
     {% endif %}
 {% endblock search %}
 
-<!--  
-
-<div class="container" style="max-width:500px; ">
-    <form>
-            {% for class_n in class_s %}
-            {% if class_n %}
-            <button class="btn btn-danger" value="{{ class_n }}" action="/" method="POST">{{ class_n }}</button>
-            {% endif %}
-                {% if class_n == "10-5" or class_n == "11-5" %}
-                 <br><br>   
-                {% endif %}
-            {% endfor %}
-    </form>
-    <script src="{{url_for('static', filename='ajax.js')}}"></script>
-</div>
--->
 
 
 <div class="container" style="max-width:200px; ">
@@ -59,38 +44,17 @@
                 {% endif %}
             {% endfor %}
         </select>
-        <input type="submit" value="Submit">
     </form>
 </div>
 
 
-
-<!--        radio button 
-<div class="container" style="max-width:500px; ">
-        <form action="/" method="post">
-            {% for class_n in class_s %}
-                {% if class_n  %}
-                {% if class_n == "10-5" or class_n == "11-5" %}
-                <br><br>   
-               {% endif %}
-                    <input class="form-check-input" id="searched_class" name="searched_class" type="radio" name="color" value="{{ class_n }}"> {{ class_n }}
-                {% endif %}
-            {% endfor %}
-            <br>
-            <input type="submit" value="submit">  
-          </form>          
-</div>
-
-<style>
-
-</style>
--->
-
-
-
-
-
-
+<br><br>
+<div class="custom-control custom-switch">
+    <div>
+    <input type="checkbox" name="swichBtn" class="custom-control-input" id="swichBtn" onchange="convert_Btn()"> 
+    <label class="custom-control-label" for="swichBtn">اتصال هاتفي</label>
+    </div>
+  </div>
 
 
 
@@ -100,40 +64,117 @@
     
     <table class="table" id="chart_table">
       <tr class="table-success">
+          <th>#</th>
           <th>الاسم</th>
           <th> الصف</th>
           <th>رقم الطالب</th>
           <th>رقم الام</th>
           <th>رقم الاب</th>
+          <th>تعديل</th>
         </tr>
 
     {% for user in users %}
     <div>
         <tr>
-            <td class="">{% if user[1]  %}{{ user[1] }}</td> {% endif %}
-            <td class="">{% if user[3]  %}{{ user[3] }} {% endif %}</td>
-            <td>{% if user[5]  %}<a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[5] }}">الطالب</a>{% endif %}</td>
-            <td>{% if user[6]  %}<a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[6] }}">الام</a>{% endif %}</td>
-             <td>{% if user[7]  %}<a button type="button" class="btn botton_w botton_whatsapp div_elemnts botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[7] }}">الاب</a>{% endif %}</td>
+            <td style="width:20px;height:20px">{{loop.index}}</td>
+            <td class=""><Span class="nameAndClass">{% if user[1]  %}{{ user[1] }}{% endif %}</Span></td>
+            <td class=""><span class="nameAndClass">{% if user[2]  %}{{ user[2] }} {% endif %}</span></td>
+            <td>
+                {% if user[3]  %}<a button type="button" class="btn botton_w botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[3] }}">الطالب</a>{% endif %}
+                {% if user[3]  %}<a button type="button" class="btn botton_c botton_text" href="tel:972{{ user[3] }}">الطالب</a>{% endif %}
+            </td>
+            <td>
+                {% if user[4]  %}<a button type="button" class="btn botton_w botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[4] }}">الام</a>{% endif %}
+                {% if user[4]  %}<a button type="button" class="btn botton_c botton_text" href="tel:=972{{ user[4] }}">الام</a>{% endif %}
+            </td>
+            <td>
+                {% if user[5]  %}<a button type="button" class="btn botton_w botton_text" href="https://api.whatsapp.com/send?phone=952{{ user[5] }}">الاب</a>{% endif %}
+                {% if user[5]  %}<a button type="button" class="btn botton_c botton_text" href="tel:{{ user[5] }}">الاب</a>{% endif %}
+            </td>
+            <!-- button -->
+            <td style="width:20px;height:20px"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}"><img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png" alt="edit" style="width:20px;height:20px"></button></td>
+            <!-- <td><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}">&#xF3E5</button></td> -->
+            
         </tr>
     </div>
+
+                <!-- The Modal -->
+    <div class="modal fade" id="myModal{{ user[0] }}">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+            </div>
+
+            <!-- Modal body -->
+            <div class="container addForm">
+                <form action="{{ url_for( "UPDATE", id=user[0] ) }}" method="post">
+                <div class="row">
+                    <div class="col-25">
+                    <label for="username" autocomplete="off">الاسم</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="text" name="username{{ user[0] }}" value="{{ user[1] }}" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                    <label for="class_n">الصف</label>
+                    </div>
+                    <div class="col-75">
+                    <select id="class_n" name="class_n{{ user[0] }}">
+                        <option>{{ user[2] }}</option>
+                        {% for class in class_s %}
+                        <option value="{{ class }}">{{ class }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                    <label for="student_n">رقم الطالب</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="text" id="student_n" name="student_n{{ user[0] }}" value="{{ user[3] }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                    <label for="mother_n">رقم الام</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="text" id="mother_n" name="mother_n{{ user[0] }}" value="{{ user[4] }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                    <label for="father_n">رقم الاب</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="text" id="father_n" name="father_n{{ user[0] }}" value="{{ user[5] }}">
+                    </div>
+                </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button "type="submet" class="btn btn-success btn-block " data-bs-dismiss="modal"">SAVE</button>
+                        <button onclick="location.href='/delete/{{user[0]}}'" type="button" class="btn btn-danger btn-block" data-bs-dismiss="modal">delete</button>
+                        <button data-bs-dismiss="modal" type="button" class="btn btn-block">cancel</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    
     {% endfor %}
 
 
 {% endblock %}
 </table>
 </div>
-
-
-
-
-        <br><br><br><br><br><br>
-        <br><br><br><br><br><br>
-
-
- 
-
-
 
 </div>
 {% endblock %}
