@@ -1,0 +1,20 @@
+{
+  "name": "click",
+  "version": "1.0.0",
+  "description": "hi, my name is rshed and i work as a high school teacher in palestine. this in my cs50 final project. i decide to create a useful app to my school to help students and teachers and parents to easy communicate.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rshedsfa/connectapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rshedsfa/connectapp/issues"
+  },
+  "homepage": "https://github.com/rshedsfa/connectapp#readme"
+}

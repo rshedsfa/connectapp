@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container">
+<div class="">
 
 
 {% block title %}
-<h1 class="ui center aligned header" id="title" href="google.com">قائمة الطلاب</h1>
+<h1 class="ui center aligned header" id="title" href="google.com">Students</h1>
 
 {% endblock title %}
 
@@ -15,7 +15,7 @@
         <form action="/search" method="get">
               <div class="input-group mb-3">
                 <button type="submit" value="Search" class="btn btn-primary" id="button-addon1">Search</button>
-                <input autocomplete="off" autofocus name="searched_word" placeholder="اسم الطالب" type="search" class="form-control + placeholder_class" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <input autocomplete="off" autofocus name="searched_word" placeholder="student name" type="search" class="form-control + placeholder_class" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
               </div>
         </form>
       </div>
@@ -36,7 +36,7 @@
             <option value="none" selected disabled hidden>{{ searched_class }}</option>
             {% endif %}
             {% if not searched_class  %}
-            <option value="none" selected disabled hidden>اختر الصف</option>
+            <option value="none" selected disabled hidden>class</option>
             {% endif %}
             {% for class in class_s %}
                 {% if class  %}
@@ -52,7 +52,7 @@
 <div class="custom-control custom-switch">
     <div>
     <input type="checkbox" name="swichBtn" class="custom-control-input" id="swichBtn" onchange="convert_Btn()"> 
-    <label class="custom-control-label" for="swichBtn">اتصال هاتفي</label>
+    <label class="custom-control-label" for="swichBtn">Call Mode</label>
     </div>
   </div>
 
@@ -61,42 +61,52 @@
 
 {% block main %}
 <div id="main_chart" class="">      
-    
-    <table class="table" id="chart_table">
+    <table class="table table-sm" id="">
       <tr class="table-success">
-          <th  class="hide_in_phone">#</th>
-          <th>الاسم</th>
-          <th> الصف</th>
-          <th>رقم الطالب</th>
-          <th>رقم الام</th>
-          <th>رقم الاب</th>
-          <th>تعديل</th>
+          <th  class="display_Pc">#</th>
+          <th>name</th>
+          <th>class</th>
+          <th>student</th>
+          <th>mother</th>
+          <th>father</th>
+          <th class="display_Pc">edit</th>
         </tr>
 
     {% for user in users %}
     <div>
         <tr>
-            <td class="hide_in_phone" style="width:20px;height:20px">{{loop.index}}</td>
+            <td class="display_Pc" style="width:20px;height:20px">{{loop.index}}</td>
             <td class="tdName"><Span class="nameAndClass">{% if user[1]  %}{{ user[1] }}{% endif %}</Span></td>
             <td class="tdClass"><span class="nameAndClass">{% if user[2]  %}{{ user[2] }} {% endif %}</span></td>
             <td>
-                {% if user[3]  %}<a button type="button" class="btn botton_w botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[3] }}">الطالب</a>{% endif %}
-                {% if user[3]  %}<a button type="button" class="btn botton_c botton_text" href="tel:972{{ user[3] }}">الطالب</a>{% endif %}
+                {% if user[3]  %}<a button type="button" class="btn botton_w" href="https://api.whatsapp.com/send?phone=972{{ user[3] }}">student</a>{% endif %}
+                {% if user[3]  %}<a button type="button" class="btn botton_c" href="tel:972{{ user[3] }}">student</a>{% endif %}
             </td>
             <td>
-                {% if user[4]  %}<a button type="button" class="btn botton_w botton_text" href="https://api.whatsapp.com/send?phone=972{{ user[4] }}">الام</a>{% endif %}
-                {% if user[4]  %}<a button type="button" class="btn botton_c botton_text" href="tel:=972{{ user[4] }}">الام</a>{% endif %}
+                {% if user[4]  %}<a button type="button" class="btn botton_w" href="https://api.whatsapp.com/send?phone=972{{ user[4] }}">mother</a>{% endif %}
+                {% if user[4]  %}<a button type="button" class="btn botton_c" href="tel:=972{{ user[4] }}">mother</a>{% endif %}
             </td>
             <td>
-                {% if user[5]  %}<a button type="button" class="btn botton_w botton_text" href="https://api.whatsapp.com/send?phone=952{{ user[5] }}">الاب</a>{% endif %}
-                {% if user[5]  %}<a button type="button" class="btn botton_c botton_text" href="tel:{{ user[5] }}">الاب</a>{% endif %}
+                {% if user[5]  %}<a button type="button" class="btn botton_w" href="https://api.whatsapp.com/send?phone=952{{ user[5] }}">father</a>{% endif %}
+                {% if user[5]  %}<a button type="button" class="btn botton_c" href="tel:{{ user[5] }}">father</a>{% endif %}
             </td>
-            <!-- button -->
-            <td><button type="button" class="btn editBtn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}"><img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png" alt="edit" class="editBtn"></button></td>
-            <!-- <td><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}">&#xF3E5</button></td> -->
-            
+            <!-- edit button -->
+            <td class="display_Pc"><button type="button" class="btn editBtn" data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}"><img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png" alt="edit" class="editBtn"></button></td>            
         </tr>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- The Modal -->
     <div class="modal fade" id="myModal{{ user[0] }}">
@@ -105,15 +115,15 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">معلومات المستخدم</h4>
+                <h4 class="modal-title">user information</h4>
             </div>
 
             <!-- Modal body -->
-            <div class="container addForm">
+            <div class="addForm">
                 <form action="{{ url_for( "UPDATE", id=user[0] ) }}" method="post">
                 <div class="row">
                     <div class="col-25">
-                    <label for="username" autocomplete="off">الاسم</label>
+                    <label for="username" autocomplete="off">name</label>
                     </div>
                     <div class="col-75">
                     <input type="text" name="username{{ user[0] }}" value="{{ user[1] }}" required>
@@ -121,7 +131,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                    <label for="class_n">الصف</label>
+                    <label for="class_n">class</label>
                     </div>
                     <div class="col-75">
                     <select id="class_n" name="class_n{{ user[0] }}">
@@ -134,7 +144,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                    <label for="student_n">رقم الطالب</label>
+                    <label for="student_n">student	number</label>
                     </div>
                     <div class="col-75">
                     <input type="text" id="student_n" name="student_n{{ user[0] }}" value="{{ user[3] }}">
@@ -142,7 +152,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                    <label for="mother_n">رقم الام</label>
+                    <label for="mother_n">mother number</label>
                     </div>
                     <div class="col-75">
                     <input type="text" id="mother_n" name="mother_n{{ user[0] }}" value="{{ user[4] }}">
@@ -150,7 +160,7 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                    <label for="father_n">رقم الاب</label>
+                    <label for="father_n">father number</label>
                     </div>
                     <div class="col-75">
                     <input type="text" id="father_n" name="father_n{{ user[0] }}" value="{{ user[5] }}">

@@ -109,6 +109,7 @@ def delete(id):
     conn.commit()
     return (index())   
     
+ 
 
 
 # just add dummy users to test
@@ -125,10 +126,13 @@ def addSomeStudents():
     cu.execute("INSERT INTO users(username, class_n, student_n, mother_n, father_n) VALUES (?,?,?,?,?)", ("جهاد عمر عنبوسي", "11-2", "0504834414", "0507733453", "0504834414"))
     conn.commit()
     return (index())   
+
+
     
 #run app
 if __name__ == "__main__":
     application.run(debug=True)
+
 
 
 """ copy paste for deployment
