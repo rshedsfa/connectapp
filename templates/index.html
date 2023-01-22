@@ -29,7 +29,7 @@
 
 
 
-<div class="container" style="max-width:200px; ">
+<div id="classSearch" style=" ">
     <form action="/" method="post">
         <select onchange='if(this.value != 0) { this.form.submit(); }' id="searched_class" name="searched_class" class="form-select" aria-label="Default select example">
             {% if searched_class  %}
@@ -48,7 +48,6 @@
 </div>
 
 
-<br><br>
 <div class="custom-control custom-switch">
     <div>
     <input type="checkbox" name="swichBtn" class="custom-control-input" id="swichBtn" onchange="convert_Btn()"> 
@@ -61,7 +60,7 @@
 
 {% block main %}
 <div id="main_chart" class="">      
-    <table class="table table-sm" id="">
+    <table class="table table-sm" id="mainTable">
       <tr class="table-success">
           <th  class="display_Pc">#</th>
           <th>name</th>
@@ -76,7 +75,7 @@
     <div>
         <tr>
             <td class="display_Pc" style="width:20px;height:20px">{{loop.index}}</td>
-            <td class="tdName"><Span class="nameAndClass">{% if user[1]  %}{{ user[1] }}{% endif %}</Span></td>
+            <td class="tdName"><Span data-bs-toggle="modal" data-bs-target="#myModal{{ user[0] }}"class="nameAndClass">{% if user[1]  %}{{ user[1] }}{% endif %}</Span></td>
             <td class="tdClass"><span class="nameAndClass">{% if user[2]  %}{{ user[2] }} {% endif %}</span></td>
             <td>
                 {% if user[3]  %}<a button type="button" class="btn botton_w" href="https://api.whatsapp.com/send?phone=972{{ user[3] }}">student</a>{% endif %}
@@ -111,11 +110,11 @@
     <!-- The Modal -->
     <div class="modal fade" id="myModal{{ user[0] }}">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content container">
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">user information</h4>
+                <h4 class="modal-title">User information</h4>
             </div>
 
             <!-- Modal body -->

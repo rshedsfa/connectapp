@@ -5,8 +5,20 @@ body{
   background-color: #f2f2f2;
 }
 
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+select{
+  max-width: 100%;
+}
 .modal-header{
 margin: auto;
+margin-bottom: 10px;
 }
 .btn-close{
 margin: auto;
